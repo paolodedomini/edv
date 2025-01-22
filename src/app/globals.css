@@ -221,7 +221,13 @@ main input::placeholder {
 
 /*scanlines*/
 .scanlines {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
 }
 .scanlines:before,
 .scanlines:after {
@@ -236,7 +242,7 @@ main input::placeholder {
   z-index: 2147483649;
   background: var(--foreground);
   opacity: 0.75;
-  animation: scanline 10s linear infinite;
+  animation: scanline 5s linear infinite;
 }
 .scanlines:after {
   top: 0;
@@ -249,14 +255,17 @@ main input::placeholder {
     transparent 80%,
     var(--background) 90%
   );
-  background-size: 100% 3px;
+  background-size: 100% 3.2px;
   animation: scanlines 1.3s steps(60) infinite;
 }
 
 /* ANIMATE UNIQUE SCANLINE */
 @keyframes scanline {
   0% {
-    transform: translate3d(0, 200000%, 0);
+    transform: translate3d(0, 100vh, 0);
+  }
+  30% {
+    transform: translate3d(0, -20px, 0);
   }
 }
 @keyframes scanlines {
@@ -264,10 +273,7 @@ main input::placeholder {
     background-position: 0 50%;
   }
 }
-div {
-  margin: 0;
-  padding: 0;
-}
+
 @media screen and (max-width: 1024px) {
   main h1 {
     font-size: 1.5rem;

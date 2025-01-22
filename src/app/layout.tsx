@@ -14,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="scanlines">{children}</body>
+      <body>
+        <div className="scanlines"></div>
+        {children}
+      </body>
     </html>
   );
 }
