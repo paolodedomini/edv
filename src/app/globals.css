@@ -99,6 +99,10 @@ main input::placeholder {
   margin-top: 3rem;
   font-size: 0.8rem;
   text-align: center;
+  border: 1px solid;
+  padding: 0.4rem;
+  margin: 3rem auto 0 auto;
+  max-width: 600px;
 }
 .result {
   width: 100%;
@@ -293,6 +297,11 @@ main input::placeholder {
   .modal h2 {
     font-size: 1.8rem;
   }
+  .current {
+    margin-top: 2rem;
+    border: 1px solid;
+    padding: 0.4rem;
+  }
 }
 @media screen and (max-width: 440px) {
   .close {
@@ -314,5 +323,6 @@ main input::placeholder {
   }
   .quote {
     font-size: 0.8rem;
+    margin: 0;
   }
 }
