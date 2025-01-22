@@ -24,7 +24,7 @@ export function filterPiattaforma(
     if (typeof str === "string") {
       const arrayFromStr = str.split(",");
       return arrayFromStr.some((item) =>
-        item.trim().toLowerCase().includes(search)
+        item.trim().toLowerCase().includes(search.toLowerCase())
       );
     }
   });
