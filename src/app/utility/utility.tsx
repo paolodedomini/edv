@@ -2,7 +2,7 @@ import { Trecord } from "../types";
 export function filterString(data: Trecord[], search: string, filter: string) {
   const result = data.filter((item: Trecord) => {
     const str = item[filter as keyof Trecord]?.toString();
-    return str.toLowerCase().includes(search);
+    return str.toLowerCase().includes(search.toLowerCase());
   });
   return result;
 }

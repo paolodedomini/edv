@@ -66,7 +66,6 @@ function Search({ data }: { data: Trecord[] }) {
       }
 
       setSearch(null);
-      console.log(submit, "term");
     }
   }, [submit, filter]);
   function getData(e: React.ChangeEvent<HTMLInputElement>) {
@@ -74,8 +73,8 @@ function Search({ data }: { data: Trecord[] }) {
   }
   function setSubmitSearch(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
-
-    setSubmit(search);
+    console.log("submit", search?.toLowerCase());
+    setSubmit(search?.toLowerCase() || null);
     setOpen(false);
   }
   function setDataAndOpenModal(record: string) {
