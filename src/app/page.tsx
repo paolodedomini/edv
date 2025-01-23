@@ -8,12 +8,12 @@ export default async function Home() {
     const getData = await fetch(
       "https://raw.githubusercontent.com/paolodedomini/edvarchive-api/refs/heads/main/data.json"
     );
-    const JsonData = await getData.json();
+    const edvdata = await getData.json();
 
-    if (!JsonData) {
+    if (!edvdata) {
       throw Error("non ci sono dati");
     }
-    if (JsonData.data.length) {
+    if (edvdata.data.length) {
       return (
         <div className={"page"}>
           <main className={`${"main"} ${main.className}`}>
