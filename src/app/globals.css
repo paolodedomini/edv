@@ -3,6 +3,9 @@
   --foreground: #867ade;
   --shadow: #322878;
 }
+.blur {
+  animation: blur 1s;
+}
 
 html,
 body {
@@ -284,11 +287,6 @@ main input::placeholder {
     transform: translate3d(0, -20px, 0);
   }
 }
-@keyframes scanlines {
-  0% {
-    background-position: 0 50%;
-  }
-}
 
 @media screen and (max-width: 1024px) {
   main h1 {
@@ -360,5 +358,20 @@ main input::placeholder {
   .quote {
     font-size: 0.8rem;
     margin: 0;
+  }
+}
+
+/*ANIMATIONS*/
+@keyframes blur {
+  0% {
+    filter: blur(10px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+@keyframes scanlines {
+  0% {
+    background-position: 0 50%;
   }
 }
