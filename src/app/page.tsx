@@ -1,4 +1,4 @@
-import { Press_Start_2P } from "next/font/google";
+import { Press_Start_2P, Flamenco } from "next/font/google";
 import Search from "./components/search";
 
 const main = Press_Start_2P({ weight: "400", subsets: ["latin"] });
@@ -24,7 +24,7 @@ export default async function Home() {
                   <span>-</span> V1 <span>****</span>
                 </h1>
               </a>
-              <h3 className="quote">(NAMASTE&apos;)</h3>
+              <h3 className="quote">(64k of NAMASTE&apos;)</h3>
             </div>
 
             <Search data={edvdata.data} />
