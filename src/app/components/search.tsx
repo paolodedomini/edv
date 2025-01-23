@@ -12,7 +12,6 @@ import {
   easterEgg,
 } from "../utility/utility";
 import NotFound from "./notFound";
-import { sub } from "motion/react-client";
 
 function Search({ data }: { data: Trecord[] }) {
   const [search, setSearch] = useState<string | null>(null);
