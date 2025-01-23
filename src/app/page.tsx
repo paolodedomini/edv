@@ -6,6 +6,7 @@ const main = Press_Start_2P({ weight: "400", subsets: ["latin"] });
 
 export default async function Home() {
   try {
+    //const getData = await fetch("/data/edv.json");
     if (!edvdata) {
       throw Error("non ci sono dati");
     }
