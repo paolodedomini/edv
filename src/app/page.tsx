@@ -24,7 +24,7 @@ export default async function Home() {
                   <span>-</span> V1 <span>****</span>
                 </h1>
               </a>
-              <h3 className="quote">(NAMASTE&apos;)</h3>
+              <h3 className="quote">(64K of NAMASTE&apos;)</h3>
             </div>
 
             <Search data={edvdata.data} />
