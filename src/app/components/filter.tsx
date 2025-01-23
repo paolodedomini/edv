@@ -23,6 +23,15 @@ function Filters({
         </li>
         <li
           onClick={() => {
+            setFilter("Genere");
+            setSubmit(null);
+          }}
+          className={`${filter === "Genere" ? "active" : ""}`}
+        >
+          genere
+        </li>
+        <li
+          onClick={() => {
             setFilter("Anno");
             setSubmit(null);
           }}

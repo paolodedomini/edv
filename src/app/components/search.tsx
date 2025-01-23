@@ -25,7 +25,11 @@ function Search({ data }: { data: Trecord[] }) {
     setFilteredData([]);
     if (search) {
       const risultatiUnici: Trecord[] = [];
-      if (filter === "Nome_Gioco" || filter === "Sviluppo") {
+      if (
+        filter === "Nome_Gioco" ||
+        filter === "Sviluppo" ||
+        filter === "Genere"
+      ) {
         //filtra i dati in base alla stringa di ricerca
         const filtered = filterString(data, search, filter);
         //crea un array con risultati non ripetuti
