@@ -45,8 +45,12 @@ export function datiUnici(dati: Trecord[], risultatiUnici: Trecord[]) {
 
 export function easterEgg(word: string | null) {
   switch (word) {
-    case "namaste":
-      return "NAMASTE'";
+    case "namastace":
+      return "ace.png";
+    case "ho visto cose":
+      return "vanacchio.png";
+    case "pasqualace":
+      return "panettace.png";
     default:
       return null;
   }

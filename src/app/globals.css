@@ -209,6 +209,7 @@ main input::placeholder {
   display: flex;
   justify-content: center;
 }
+
 .notFound img {
   width: 80%;
   height: auto;
@@ -265,6 +266,14 @@ main input::placeholder {
 }
 .easter {
   text-align: center;
+  box-shadow: 10px 10px 0px var(--shadow);
+}
+.easter img {
+  width: 100%;
+  height: auto;
+
+  max-height: 480px;
+  border: 10px solid var(--foreground);
 }
 /* ANIMATE UNIQUE SCANLINE */
 @keyframes scanline {
@@ -319,6 +328,9 @@ main input::placeholder {
   }
 }
 @media screen and (max-width: 500px) {
+  .easter img {
+    height: 250px;
+  }
   .modal h3 {
     text-align: left;
   }

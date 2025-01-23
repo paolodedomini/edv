@@ -12,6 +12,7 @@ import {
   easterEgg,
 } from "../utility/utility";
 import NotFound from "./notFound";
+import { sub } from "motion/react-client";
 
 function Search({ data }: { data: Trecord[] }) {
   const [search, setSearch] = useState<string | null>(null);
@@ -96,7 +97,7 @@ function Search({ data }: { data: Trecord[] }) {
         {easterEgg(submit) === null && filteredData.length === 0 && submit && (
           <NotFound />
         )}
-        {easterEgg(submit) !== null && <EasterEgg />}
+        {easterEgg(submit) !== null && <EasterEgg word={submit} />}
         {open && easterEgg(submit) === null && (
           <Results
             record={singleRecord}
