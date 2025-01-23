@@ -30,3 +30,24 @@ export function filterPiattaforma(
   });
   return result;
 }
+
+export function datiUnici(dati: Trecord[], risultatiUnici: Trecord[]) {
+  dati.forEach((item: Trecord) => {
+    if (
+      !risultatiUnici.some(
+        (uniqueItem: Trecord) => uniqueItem.Nome_Gioco === item.Nome_Gioco
+      )
+    ) {
+      risultatiUnici.push(item);
+    }
+  });
+}
+
+export function easterEgg(word: string | null) {
+  switch (word) {
+    case "namaste":
+      return "NAMASTE'";
+    default:
+      return null;
+  }
+}

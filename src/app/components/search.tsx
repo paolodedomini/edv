@@ -3,10 +3,13 @@ import React, { useState, useEffect } from "react";
 import { Trecord } from "../types";
 import Results from "./results";
 import Filters from "./filter";
+import EasterEgg from "./easterEgg";
 import {
   filterString,
   filterAnno,
   filterPiattaforma,
+  datiUnici,
+  easterEgg,
 } from "../utility/utility";
 import NotFound from "./notFound";
 
@@ -23,45 +26,20 @@ function Search({ data }: { data: Trecord[] }) {
     if (search) {
       const risultatiUnici: Trecord[] = [];
       if (filter === "Nome_Gioco" || filter === "Sviluppo") {
+        //filtra i dati in base alla stringa di ricerca
+        const filtered = filterString(data, search, filter);
         //crea un array con risultati non ripetuti
-        filterString(data, search, filter).forEach((item: Trecord) => {
-          if (
-            !risultatiUnici.some(
-              (uniqueItem) => uniqueItem.Nome_Gioco === item.Nome_Gioco
-            )
-          ) {
-            risultatiUnici.push(item);
-          }
-        });
-
+        datiUnici(filtered, risultatiUnici);
+        // setta i risultati
         setFilteredData(risultatiUnici);
       } else if (filter === "Anno") {
         const filtered = filterAnno(data, search, filter);
         console.log("anno", filtered);
-        filtered.forEach((item: Trecord) => {
-          if (
-            !risultatiUnici.some(
-              (uniqueItem) => uniqueItem.Nome_Gioco === item.Nome_Gioco
-            )
-          ) {
-            risultatiUnici.push(item);
-          }
-        });
-
+        datiUnici(filtered, risultatiUnici);
         setFilteredData(risultatiUnici);
       } else if (filter === "Piattaforma") {
         const filtered = filterPiattaforma(data, search, filter);
-
-        filtered.forEach((item: Trecord) => {
-          if (
-            !risultatiUnici.some(
-              (uniqueItem) => uniqueItem.Nome_Gioco === item.Nome_Gioco
-            )
-          ) {
-            risultatiUnici.push(item);
-          }
-        });
-
+        datiUnici(filtered, risultatiUnici);
         setFilteredData(risultatiUnici);
       }
 
@@ -115,8 +93,11 @@ function Search({ data }: { data: Trecord[] }) {
             })}
           </ul>
         )}
-        {filteredData.length === 0 && submit && <NotFound />}
-        {open && (
+        {easterEgg(submit) === null && filteredData.length === 0 && submit && (
+          <NotFound />
+        )}
+        {easterEgg(submit) !== null && <EasterEgg />}
+        {open && easterEgg(submit) === null && (
           <Results
             record={singleRecord}
             datalist={data}
@@ -126,8 +107,6 @@ function Search({ data }: { data: Trecord[] }) {
         )}
       </div>
     );
-  } else {
-    return <p>loading...</p>;
   }
 }
 
