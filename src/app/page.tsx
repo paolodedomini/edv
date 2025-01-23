@@ -6,11 +6,15 @@ const main = Press_Start_2P({ weight: "400", subsets: ["latin"] });
 
 export default async function Home() {
   try {
-    //const getData = await fetch("/data/edv.json");
-    if (!edvdata) {
+    const getData = await fetch(
+      "https://paolodedomini.github.io/edv/api/archivedata.json"
+    );
+    const JsonData = await getData.json();
+
+    if (!JsonData) {
       throw Error("non ci sono dati");
     }
-    if (edvdata.data.length) {
+    if (JsonData.data.length) {
       return (
         <div className={"page"}>
           <main className={`${"main"} ${main.className}`}>
