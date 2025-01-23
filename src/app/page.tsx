@@ -1,6 +1,5 @@
 import { Press_Start_2P } from "next/font/google";
 import Search from "./components/search";
-import edvdata from "../../public/data/edv.json";
 
 const main = Press_Start_2P({ weight: "400", subsets: ["latin"] });
 
