@@ -7,7 +7,7 @@ const main = Press_Start_2P({ weight: "400", subsets: ["latin"] });
 export default async function Home() {
   try {
     const getData = await fetch(
-      "https://paolodedomini.github.io/edv/api/archivedata.json"
+      "https://raw.githubusercontent.com/paolodedomini/edv/refs/heads/main/api/archivedata.json"
     );
     const JsonData = await getData.json();
 
