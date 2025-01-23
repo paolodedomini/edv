@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-
+import ThemeMain from "./components/themeMain";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,10 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="blur">
-        <div className="scanlines"></div>
-        {children}
-      </body>
+      <ThemeMain>{children}</ThemeMain>
     </html>
   );
 }
