@@ -23,8 +23,8 @@ export function filterPiattaforma(
     const str = item[filter as keyof Trecord];
     if (typeof str === "string") {
       const arrayFromStr = str.split(",");
-      return arrayFromStr.some((item) =>
-        item.trim().toLowerCase().includes(search.toLowerCase())
+      return arrayFromStr.some(
+        (item) => item.trim().toLowerCase() === search.toLowerCase()
       );
     }
   });
@@ -43,6 +43,18 @@ export function datiUnici(dati: Trecord[], risultatiUnici: Trecord[]) {
   });
 }
 
+export function filterGenere(data: Trecord[], search: string, filter: string) {
+  const result = data.filter((item: Trecord) => {
+    const str = item[filter as keyof Trecord];
+    if (typeof str === "string") {
+      const arrayFromStr = str.split(",");
+      return arrayFromStr.some(
+        (item) => item.trim().toLowerCase() === search.toLowerCase()
+      );
+    }
+  });
+  return result;
+}
 export function easterEgg(word: string | null) {
   switch (word) {
     case "namastace":

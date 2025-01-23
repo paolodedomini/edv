@@ -8,6 +8,7 @@ import {
   filterString,
   filterAnno,
   filterPiattaforma,
+  filterGenere,
   datiUnici,
   easterEgg,
 } from "../utility/utility";
@@ -25,11 +26,7 @@ function Search({ data }: { data: Trecord[] }) {
     setFilteredData([]);
     if (search) {
       const risultatiUnici: Trecord[] = [];
-      if (
-        filter === "Nome_Gioco" ||
-        filter === "Sviluppo" ||
-        filter === "Genere"
-      ) {
+      if (filter === "Nome_Gioco" || filter === "Sviluppo") {
         //filtra i dati in base alla stringa di ricerca
         const filtered = filterString(data, search, filter);
         //crea un array con risultati non ripetuti
@@ -43,6 +40,10 @@ function Search({ data }: { data: Trecord[] }) {
         setFilteredData(risultatiUnici);
       } else if (filter === "Piattaforma") {
         const filtered = filterPiattaforma(data, search, filter);
+        datiUnici(filtered, risultatiUnici);
+        setFilteredData(risultatiUnici);
+      } else if (filter === "Genere") {
+        const filtered = filterGenere(data, search, filter);
         datiUnici(filtered, risultatiUnici);
         setFilteredData(risultatiUnici);
       }
