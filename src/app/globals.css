@@ -327,6 +327,11 @@ main input::placeholder {
 }
 
 @media screen and (max-width: 760px) {
+  .legenda button {
+    padding: 0.3rem;
+    opacity: 0.3;
+    flex-basis: 23px;
+  }
   .linkArrow {
     top: 7px;
     left: -20px;
