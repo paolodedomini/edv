@@ -9,8 +9,13 @@ function ThemeMain({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<string>("light");
   return (
     <body className={`blur ${theme}`}>
-      <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-        {theme === "light" ? "🌙" : "☀️"}
+      <button
+        className={`${"themeButton"} ${
+          theme === "light" ? main.className : dark.className
+        }`}
+        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      >
+        {theme === "light" ? "LV-426" : "C64"}
       </button>
       <div className="scanlines"></div>
       <main

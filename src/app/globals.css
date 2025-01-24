@@ -104,6 +104,16 @@ main input:focus {
 main input::placeholder {
   color: var(--background);
 }
+.themeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1rem;
+  padding: 0.5rem;
+  border: 0;
+  cursor: pointer;
+  z-index: 1000;
+}
 .current {
   margin-top: 3rem;
   font-size: 0.8rem;
@@ -284,6 +294,21 @@ main input::placeholder {
   max-height: 480px;
   border: 10px solid var(--foreground);
 }
+.legenda {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  bottom: 1rem;
+  right: 1rem;
+}
+.legenda button {
+  padding: 1rem;
+}
+.legenda ul {
+  text-align: right;
+}
 /* ANIMATE UNIQUE SCANLINE */
 @keyframes scanline {
   0% {
@@ -351,9 +376,7 @@ main input::placeholder {
   .modal {
     padding: 1rem;
   }
-  main {
-    padding-top: 1rem;
-  }
+
   main h1 {
     font-size: 1.3rem;
     padding: 1rem;
