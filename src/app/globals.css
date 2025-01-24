@@ -2,6 +2,14 @@
   --background: #483aaa;
   --foreground: #867ade;
   --shadow: #322878;
+  --shade: #4638a6;
+}
+.dark {
+  --background: #000000;
+  --foreground: #1cc243;
+  --shadow: #363636;
+  --shade: #040404;
+  --line: #033b10;
 }
 .blur {
   animation: blur 1s;
@@ -11,14 +19,12 @@ html,
 body {
   max-width: 100vw;
   margin: 0;
-
-  background: var(--background);
 }
 
 body {
   margin: 0;
   color: var(--foreground);
-  background: var(--background);
+  background-color: var(--shade);
 }
 
 * {
@@ -41,9 +47,9 @@ a {
   text-decoration: none;
 }
 main {
+  background: var(--background);
   position: relative;
   max-width: 1400px;
-
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -97,6 +103,16 @@ main input:focus {
 
 main input::placeholder {
   color: var(--background);
+}
+.themeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1rem;
+  padding: 0.5rem;
+  border: 0;
+  cursor: pointer;
+  z-index: 1000;
 }
 .current {
   margin-top: 3rem;
@@ -173,7 +189,7 @@ main input::placeholder {
   margin-top: 1rem;
   font-size: 0.8rem;
 }
-.legenda {
+.legendaFiltri {
   margin-top: 1rem;
   font-size: 0.7rem;
   text-align: center;
@@ -249,7 +265,7 @@ main input::placeholder {
   width: 100%;
   height: 2px;
   z-index: 2147483649;
-  background: var(--foreground);
+  background: var(--line);
   opacity: 0.75;
   animation: scanline 5s linear infinite;
 }
@@ -277,6 +293,22 @@ main input::placeholder {
 
   max-height: 480px;
   border: 10px solid var(--foreground);
+}
+.legenda {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  bottom: 1rem;
+  right: 1rem;
+}
+.legenda button {
+  padding: 1rem;
+  opacity: 0.3;
+}
+.legenda ul {
+  text-align: right;
 }
 /* ANIMATE UNIQUE SCANLINE */
 @keyframes scanline {
@@ -345,9 +377,7 @@ main input::placeholder {
   .modal {
     padding: 1rem;
   }
-  main {
-    padding-top: 1rem;
-  }
+
   main h1 {
     font-size: 1.3rem;
     padding: 1rem;
@@ -363,6 +393,22 @@ main input::placeholder {
 
 /*ANIMATIONS*/
 @keyframes blur {
+  0% {
+    filter: blur(10px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+@keyframes blur {
+  0% {
+    filter: blur(10px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+@keyframes blur2 {
   0% {
     filter: blur(10px);
   }

@@ -4,6 +4,7 @@ import { Trecord } from "../types";
 import Results from "./results";
 import Filters from "./filter";
 import EasterEgg from "./easterEgg";
+import Legenda from "./legenda";
 import {
   filterString,
   filterAnno,
@@ -110,6 +111,7 @@ function Search({ data }: { data: Trecord[] }) {
             open={open}
           />
         )}
+        <Legenda />
       </div>
     );
   }

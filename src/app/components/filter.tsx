@@ -59,7 +59,7 @@ function Filters({
         </li>
       </ul>
       {filter === "Piattaforma" && (
-        <div className="legenda">
+        <div className="legendaFiltri">
           (AMI, DOS, 3DO, AST, AII, MAC, SMD, WIN, SNES, JAG, MOB, AND, PS3,
           PS4, PSV, XB1, 3DS, NWU, NSW, ARC, NEO, SDC, N64, GBA, GBC, GBI,
           GBI...)
