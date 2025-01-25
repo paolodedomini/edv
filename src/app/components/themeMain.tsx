@@ -15,7 +15,7 @@ function ThemeMain({ children }: { children: React.ReactNode }) {
         }`}
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       >
-        {theme === "light" ? "LV-426" : "C64"}
+        {theme === "light" ? "LV/426" : "C>64"}
       </button>
       <div className="scanlines"></div>
       <main

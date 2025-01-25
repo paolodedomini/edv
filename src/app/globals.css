@@ -109,10 +109,11 @@ main input::placeholder {
   top: 0;
   right: 0;
   margin: 1rem;
-  padding: 0.5rem;
+  padding: 0.3rem;
   border: 0;
   cursor: pointer;
   z-index: 1000;
+  font-size: 0.6rem;
 }
 .current {
   margin-top: 3rem;
@@ -327,6 +328,17 @@ main input::placeholder {
 }
 
 @media screen and (max-width: 760px) {
+  .themeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0.3rem;
+    border: 0;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 0.5rem;
+  }
   .legenda button {
     padding: 0.3rem;
     opacity: 0.3;
@@ -344,6 +356,7 @@ main input::placeholder {
   }
   main {
     gap: 0;
+    padding-top: 2rem;
   }
   .result {
     padding: 1rem;
